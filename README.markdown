@@ -131,7 +131,7 @@ When you have it, run rake broadcast:authorize:twitter, which will help you get 
 ### Yammer
 
 Broadcast::Medium::Yammer is based on the oauth gem.
-In order to use it, you will need a application registered on Twitter.
+In order to use it, you will need a application registered on Yammer.
 
 When you have it, run rake broadcast:authorize:yammer, which will help you get all the required keys and tokens.
 
