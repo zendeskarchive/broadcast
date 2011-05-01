@@ -1,9 +1,9 @@
 class Broadcast::Config
-  
+
   # Allow usage of namespaces in config
-  def method_missing(meth, *args, &block)    
+  def method_missing(meth, *args, &block)
     @namespaces ||= {}
-    stringified = meth.to_s    
+    stringified = meth.to_s
     if stringified[-1].chr == '=' and args.first
       key = stringified[0..-2].to_sym
       @namespaces[key] = args.first
@@ -16,5 +16,5 @@ class Broadcast::Config
       @namespaces[key] ||= Hashie::Mash.new
     end
   end
-  
+
 end
