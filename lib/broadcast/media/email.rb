@@ -1,4 +1,5 @@
 require 'mail'
+
 class Broadcast::Medium::Email < Broadcast::Medium::Oauth
 
   def publish(message)

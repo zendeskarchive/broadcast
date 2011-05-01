@@ -1,5 +1,5 @@
 class Broadcast::Message
-  
+
   attr_accessor :options
   class << self
     attr_accessor :media
@@ -12,7 +12,7 @@ class Broadcast::Message
   def initialize(options = {})
     @options = Hashie::Mash.new(options)
   end
-  
+
   def publish
     (self.class.media || []).each do |medium|
       begin
@@ -22,10 +22,10 @@ class Broadcast::Message
       end
     end
   end
-  
+
   def subject
   end
-  
+
   def body
     ""
   end

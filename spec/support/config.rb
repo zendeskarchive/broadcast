@@ -17,14 +17,14 @@ Broadcast.setup { |config|
   config.email { |email|
     email.recipients       = ['foo@moo.com']
     email.delivery_method  = :test
-    email.delivery_options = { 
+    email.delivery_options = {
       :address => "smtp.gmail.com",
       :port                 => 587,
       :domain               => 'your.host.name',
       :user_name            => '<username>',
       :password             => '<password>',
       :authentication       => 'plain',
-      :enable_starttls_auto => true  
+      :enable_starttls_auto => true
     }
   }
 

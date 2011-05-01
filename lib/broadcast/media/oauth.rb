@@ -1,19 +1,19 @@
 require 'oauth'
 
 class Broadcast::Medium::Oauth < Broadcast::Medium
-    
+
   class << self
     attr_accessor :site
-  end  
-      
+  end
+
   def consumer
     @consumer ||= OAuth::Consumer.new(options.consumer_key, options.consumer_secret, :site => self.class.site)
   end
-    
+
   def token
     @access_token ||= OAuth::AccessToken.new(consumer, options.access_token, options.access_secret)
   end
-      
+
   def authorize
     unless options.consumer_key
       print "Enter consumer key: "
@@ -25,13 +25,13 @@ class Broadcast::Medium::Oauth < Broadcast::Medium
     end
     request_token = consumer.get_request_token
     puts "\nGo to this url and click 'Authorize' to get the token:"
-    puts request_token.authorize_url 
+    puts request_token.authorize_url
     print "\nEnter token: "
     token = $stdin.gets.chomp
 
     access_token  = request_token.get_access_token(:oauth_verifier => token)
 
-    puts "\nAuthorization complete! Put the following in your Broadcast configuration file:\n\n"    
+    puts "\nAuthorization complete! Put the following in your Broadcast configuration file:\n\n"
     puts "Broadcast.setup do |config|\n\n"
     puts "  config.#{namespace}.consumer_key     = '#{consumer.key}'"
     puts "  config.#{namespace}.consumer_secret  = '#{consumer.key}'"
@@ -39,5 +39,5 @@ class Broadcast::Medium::Oauth < Broadcast::Medium
     puts "  config.#{namespace}.access_secret    = '#{access_token.secret}'"
     puts "\nend"
   end
-  
+
 end
