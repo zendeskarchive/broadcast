@@ -1,27 +1,29 @@
 Broadcast
 =========
 
-A broadcasting microframework making publishing of messages to different services easy
+A broadcasting microframework making publishing of messages to different services easy.
 
 Installation
 ------------
 
-Broadcast is an alpha state, so it's not pushed to RubyGems yet.
+Broadcast is in alpha state, so it's not pushed to RubyGems yet.
 
 You can install it by adding the following line to your Gemfile:
 
     gem 'broadcast', :git => 'git://github.com/futuresimple/broadcast.git'
 
-and running bundle install.
+and running
+
+    bundle install
 
 Usage
 -----
 
-Broadcast has 2 main classes: Medium and Message (hat tip to Marshall McLuhan). 
+Broadcast has 2 main classes: Medium and Message (hat tip to Marshall McLuhan).
 
 **Broadcast::Medium** is the service the message will be sent to, and **Broadcast::Message** is, well, the message.
 
-The first thing you need to do is to configure the desired Media. For example, to configure jabber, put something like this in some configuration file (like a Rails initializer):
+The first thing you need to do is configuring the desired Media. For example, to configure jabber, put something like this in some configuration file (e.g. a Rails initializer):
 
 ```ruby
   Broadcast.setup do |config|
@@ -38,14 +40,14 @@ Now to send a message, you need to define Message class, like this:
 ```ruby
   class Poke < Broadcast::Message
     medium :jabber
-    
+
     def body
       "Poke!"
     end
   end
 ```
 
-When you're ready, just instantiate the message class and call #publish:
+When you're ready, just instantiate the Message class and call #publish:
 
 ```ruby
   Poke.new.publish
@@ -54,7 +56,7 @@ When you're ready, just instantiate the message class and call #publish:
 Delayed::Job
 ------------
 
-Broadcast plays nicely with Delayed::Job. For example to publish a message in a delayed jod, simply change the above example to:
+Broadcast plays nicely with Delayed::Job. For example to publish a message in a delayed job, simply change the above example to:
 
 ```ruby
   Poke.new.delay.publish
@@ -95,14 +97,14 @@ This is an example setup with smtp delivery method with Gmail
     config.email { |email|
       email.recipients       = ['foo@moo.com']
       email.delivery_method  = :smtp
-      email.delivery_options = { 
+      email.delivery_options = {
         :address              => "smtp.gmail.com",
         :port                 => 587,
         :domain               => 'your.host.name',
         :user_name            => '<username>',
         :password             => '<password>',
         :authentication       => 'plain',
-        :enable_starttls_auto => true  
+        :enable_starttls_auto => true
       }
     }
   end
