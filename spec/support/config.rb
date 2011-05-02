@@ -33,4 +33,11 @@ Broadcast.setup { |config|
     campfire.token     = 'token'
     campfire.room      = 'My Room'
   }
+
+  config.irc { |irc|
+    irc.username = 'foo',
+    irc.server = 'irc.freenode.net',
+    irc.port = '6667',
+    irc.channel = 'broadcast_test',
+  }
 }
