@@ -9,7 +9,15 @@ describe Broadcast::Medium::Irc do
       medium.options.username.should == 'foo'
       medium.options.server.should == 'irc.freenode.net'
       medium.options.port.should == '6667'
-      medium.options.channel.should == 'broadcast_test'
+      medium.options.channel.should == 'broadcast'
+    end
+
+    it "should prioritize options argument over options provided in config" do
+      medium  = Broadcast::Medium::Jabber.new(:username => 'someoneelse', :server => 'irc.otherfreenode.net', :port => '6666', :channel => 'newchannel')
+      medium.options.username.should == 'someoneelse'
+      medium.options.server.should == 'irc.otherfreenode.net'
+      medium.options.port.should == '6666'
+      medium.options.channel.should == 'newchannel'
     end
 
   end
@@ -22,7 +30,7 @@ describe Broadcast::Medium::Irc do
     end
 
     it "should send the message to IRC channels with the message body" do
-      ShoutBot.should_receive(:shout).with("irc://foo@irc.freenode.net:6667/#broadcast_test")
+      ShoutBot.should_receive(:shout).with("irc://foo@irc.freenode.net:6667/#broadcast")
       @medium.publish(@message)
     end
 

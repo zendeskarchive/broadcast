@@ -35,9 +35,9 @@ Broadcast.setup { |config|
   }
 
   config.irc { |irc|
-    irc.username = 'foo',
-    irc.server = 'irc.freenode.net',
-    irc.port = '6667',
-    irc.channel = 'broadcast_test',
+    irc.username = 'foo'
+    irc.server = 'irc.freenode.net'
+    irc.port = '6667'
+    irc.channel = 'broadcast'
   }
 }
