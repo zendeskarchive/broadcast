@@ -226,6 +226,23 @@ It is based on the assumption that the user associated with the access token has
   end
 ```
 
+### Irc
+
+Broadcast::Medium::Irc employs the shout-bot gem.
+
+#### Example setup
+
+```ruby
+  Broadcast.setup do |config|
+    config.irc { |irc|
+      irc.username = 'myusername',
+      irc.server = 'irc.freenode.net',
+      irc.port = '6667',
+      irc.channel = 'mychannel',
+    }
+  end
+```
+
 Copyright
 ---------
 
