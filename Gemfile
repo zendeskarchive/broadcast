@@ -2,6 +2,15 @@ source "http://rubygems.org"
 
 gemspec
 
-gem 'rspec'
-gem 'ruby-debug'
-gem 'rcov'
+group :development, :test do
+  gem 'rspec'
+  gem 'rcov'
+
+  platforms :mri_18 do
+    gem "ruby-debug"
+  end
+
+  platforms :mri_19 do
+    gem "ruby-debug19"
+  end
+end
