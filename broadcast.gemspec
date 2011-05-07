@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = %q{A broadcasting microframework making publishing of messages to different services easy}
 
   s.add_dependency 'hashie'
-  
+
   # 'Externalable' dependencies
   s.add_dependency 'oauth'
   s.add_dependency 'xmpp4r'
