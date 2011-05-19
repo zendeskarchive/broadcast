@@ -3,8 +3,6 @@ require 'hashie'
 
 class Broadcast
 
-  VERSION = "0.1.0"
-
   ROOT    = File.dirname(__FILE__)
 
   class << self
