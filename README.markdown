@@ -34,7 +34,7 @@ Broadcast has 2 main classes: Medium and Message (hat tip to Marshall McLuhan).
 
 **Broadcast::Medium** is the service the message will be sent to, and **Broadcast::Message** is, well, the message.
 
-The first thing you need to do is configuring the desired Media. For example, to configure jabber, put something like this in some configuration file (e.g. a Rails initializer):
+The first thing you need to do is to configure the desired Media. For example, to configure jabber, put something like this in some configuration file (e.g. a Rails initializer):
 
 ```ruby
   Broadcast.setup do |config|
