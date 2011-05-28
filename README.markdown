@@ -1,7 +1,18 @@
 Broadcast
 =========
 
-A broadcasting microframework making publishing of messages to different services easy.
+A broadcasting microframework making publishing of messages to different services easy and DRY.
+
+Use Cases
+------------
+
+Possible use cases include:
+
+- publishing a update on your product Twitter feed
+- notifying coworkers on Jabber of a deployment when it happens
+- sending update on company IRC when a signup in your startup app happens
+- publishing daily statistics to Yammer
+- sending an email and a Jabber update when a specific threshold is reached (like number of users)
 
 Installation
 ------------
