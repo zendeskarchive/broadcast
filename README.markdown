@@ -17,15 +17,17 @@ Possible use cases include:
 Installation
 ------------
 
-Broadcast is in alpha state, so it's not pushed to RubyGems yet.
+You can install broadcast via Rubygems by typing:
 
-You can install it by adding the following line to your Gemfile:
+    gem install broadcast
 
-    gem 'broadcast', :git => 'git://github.com/futuresimple/broadcast.git'
+It you use bundler, you can install it by adding the following line to your Gemfile:
+
+  gem 'broadcast'
 
 and running
 
-    bundle install
+  bundle install
 
 Usage
 -----
