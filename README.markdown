@@ -25,11 +25,11 @@ You can install broadcast via Rubygems by typing:
 
 It you use bundler, you can install it by adding the following line to your Gemfile:
 
-  gem 'broadcast'
+    gem 'broadcast'
 
 and running
 
-  bundle install
+    bundle install
 
 Usage
 -----
