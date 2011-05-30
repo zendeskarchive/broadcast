@@ -1,1 +1,1 @@
-script: "bundle exec rake"
+script: "bundle exec rspec spec"
