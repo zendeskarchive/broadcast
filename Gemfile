@@ -3,6 +3,7 @@ source "http://rubygems.org"
 gemspec
 
 group :development, :test do
+  gem 'rake', '0.8.7'
   gem 'rspec'
   gem 'rcov'
 
