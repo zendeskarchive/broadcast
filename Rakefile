@@ -19,7 +19,14 @@ begin
 
   task :default => [:spec]
 
+rescue
+  puts 'Could not load Broadcast RSpec Rake tasks'
+end
+
+begin
+
   namespace :spec do
+
     task :cleanup do
       rm_rf 'coverage.data'
     end
@@ -33,5 +40,5 @@ begin
   end
 
 rescue
-  puts 'Could not load Broadcast RSpec Rake tasks'
+  puts 'Could not load Broadcast RSpec Rcov Rake tasks'
 end
