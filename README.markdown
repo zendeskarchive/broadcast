@@ -1,4 +1,4 @@
-Broadcast [![Build Status](http://travis-ci.org/futuresimple/broadcast.png)](http://travis-ci.org/futuresimple/broadcast.png)
+Broadcast [![Build Status](http://travis-ci.org/futuresimple/broadcast.png)](http://travis-ci.org/futuresimple/broadcast)
 =========
 
 A broadcasting microframework making publishing of messages to different services easy and DRY.
