@@ -17,6 +17,8 @@ begin
     t.verbose = false
   end
 
+  task :default => [:spec]
+
   namespace :spec do
     task :cleanup do
       rm_rf 'coverage.data'
@@ -30,6 +32,6 @@ begin
 
   end
 
-rescue 
+rescue
   puts 'Could not load Broadcast RSpec Rake tasks'
 end
