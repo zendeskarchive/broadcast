@@ -7,5 +7,12 @@ class Broadcast::Message::SpecWithContent < Broadcast::Message
   end
 end
 
+class Broadcast::Message::SpecWithChagingContent < Broadcast::Message
+  def body
+    "message | " + Time.now.to_s
+  end
+end
+
+
 class Broadcast::Medium::Spec < Broadcast::Medium
 end
