@@ -7,3 +7,4 @@ sandbox
 coverage
 bin
 .rspec
+facebook_test/config.yml
