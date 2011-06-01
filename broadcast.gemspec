@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = "broadcast"
   s.version     = Broadcast::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Marcin Bunsch"]
+  s.authors     = ["Marcin Bunsch", "Antek Piechnik"]
   s.email       = ["marcin@futuresimple.com"]
   s.homepage    = "http://github.com/futuresimple/broadcast"
   s.summary     = %q{A broadcasting microframework making publishing of messages to different services easy}
