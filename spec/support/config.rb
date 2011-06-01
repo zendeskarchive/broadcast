@@ -34,6 +34,11 @@ Broadcast.setup { |config|
     campfire.room      = 'My Room'
   }
 
+  config.facebook { |facebook|
+    facebook.token     = 'fb_token'
+    facebook.page      = 'My Page'
+  }
+
   config.irc { |irc|
     irc.username = 'foo'
     irc.server = 'irc.freenode.net'
