@@ -210,6 +210,22 @@ Broadcast::Medium::Irc employs the shout-bot gem.
   end
 ```
 
+### Facebook
+
+Broadcast::Medium::Facebook uses the koala gem. It is designed to publish messages to Facebook pages.
+It is based on the assumption that the user associated with the access token has publishing access to the page.
+
+#### Example setup
+
+```ruby
+  Broadcast.setup do |config|
+    config.facebook { |facebook|
+      facebook.token = 'facebook_access_token',
+      facebook.page  = 'Name of the page to publish to'
+    }
+  end
+```
+
 Copyright
 ---------
 
