@@ -30,5 +30,7 @@ class Broadcast
 
 end
 
+require 'broadcast/publishable'
 require 'broadcast/medium'
 require 'broadcast/message'
+
