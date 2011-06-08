@@ -1,8 +1,6 @@
 # Module which allows any class to be turned into a message
 module Broadcast::Publishable
 
-  attr_accessor :options
-
   def self.included(base)
     base.extend ClassMethods
   end
@@ -12,14 +10,9 @@ module Broadcast::Publishable
     attr_accessor :media
 
     def medium(name, options = {})
-      self.media ||= []
-      self.media.push({ :name => name, :options => options })
+      (self.media ||= []).push({ :name => name, :options => options })
     end
 
-  end
-
-  def initialize(options = {})
-    @options = Hashie::Mash.new(options)
   end
 
   def publish
