@@ -68,6 +68,22 @@ When you're ready, just instantiate the Message class and call #publish:
   Poke.new.publish
 ```
 
+Broadcast::Message::Simple
+------------
+
+If you need to dynamically create a message or just want a oneliner to publish a message, Broadcast::Message::Simple is your friend!
+
+```ruby
+  Broadcast::Message::Simple.new(:body => 'Poke!').publish(:jabber)
+```
+
+Broadcast::Message::Simple accepts the following keys in the arguments hash
+
+* body
+* subject
+
+Broadcast::Message::Simple#publish accepts the name of the medium and optional override settings for that medium
+
 Delayed::Job
 ------------
 
