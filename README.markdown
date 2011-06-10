@@ -226,6 +226,26 @@ It is based on the assumption that the user associated with the access token has
   end
 ```
 
+### SMS
+
+Broadcast::Medium::SMS is based on the SMSified gem.
+You must create an account on http://smsified.com before sending SMS text messages (developer accounts are free).
+You will be given a phone number to use as your very own FROM sms number. This number, along with your username and password, 
+must be added to your config during setup.  The To address is the address of the mobile number that you would like to send the SMS message to.
+
+#### Example setup
+
+```ruby
+  Broadcast.setup do |config|
+    config.Sms { |sms|
+      sms.username       = 'myaccount'
+      sms.password       = 'mypass'
+      sms.from		     = '16025551212'
+      sms.to		     = '14801234567'
+    }
+  end
+```
+
 Copyright
 ---------
 
