@@ -1,13 +1,21 @@
-class Broadcast::Medium::Simple < Broadcast::Medium
+class Broadcast::Message::Simple < Broadcast::Message
+
+  attr_accessor :body, :subject
 
   def body
-    options.body
+    @body || options.body
   end
 
   def subject
-    options.subject
+    @subject || options.subject
   end
 
-  # TODO: implement publishing with ability to select medium on the fly
+  def publish(medium, medium_arguments = {})
+    begin
+      Broadcast::Medium.const_get(medium.to_s.downcase.capitalize).new(medium_arguments).publish(self)
+    rescue
+      Broadcast.logger.error "Publishing of #{self.class.name} to #{medium[:name]} failed:\n#{$!}"
+    end
+  end
 
 end

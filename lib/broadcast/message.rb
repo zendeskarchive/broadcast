@@ -1,5 +1,7 @@
 class Broadcast::Message
 
+  autoload "Simple", "broadcast/simple"
+
   attr_accessor :options
   class << self
     attr_accessor :media
