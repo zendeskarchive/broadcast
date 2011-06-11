@@ -45,4 +45,12 @@ Broadcast.setup { |config|
     irc.port = '6667'
     irc.channel = 'broadcast'
   }
+
+  config.sms { |sms|
+    sms.username = 'myaccount'
+    sms.password = 'mypass'
+    sms.from     = '11111111111'
+    sms.to       = '22222222222'
+  }
+
 }
