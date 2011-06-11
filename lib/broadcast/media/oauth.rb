@@ -34,7 +34,7 @@ class Broadcast::Medium::Oauth < Broadcast::Medium
     puts "\nAuthorization complete! Put the following in your Broadcast configuration file:\n\n"
     puts "Broadcast.setup do |config|\n\n"
     puts "  config.#{namespace}.consumer_key     = '#{consumer.key}'"
-    puts "  config.#{namespace}.consumer_secret  = '#{consumer.key}'"
+    puts "  config.#{namespace}.consumer_secret  = '#{consumer.secret}'"
     puts "  config.#{namespace}.access_token     = '#{access_token.token}'"
     puts "  config.#{namespace}.access_secret    = '#{access_token.secret}'"
     puts "\nend"
