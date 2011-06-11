@@ -1,6 +1,6 @@
 require 'mail'
 
-class Broadcast::Medium::Email < Broadcast::Medium::Oauth
+class Broadcast::Medium::Email < Broadcast::Medium
 
   def publish(message)
     recipients = options.recipients.is_a?(Array) ? options.recipients : [options.recipients]
@@ -18,5 +18,5 @@ class Broadcast::Medium::Email < Broadcast::Medium::Oauth
       mail.deliver
     end
   end
-  
+
 end
