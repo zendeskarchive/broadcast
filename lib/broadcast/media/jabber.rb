@@ -1,6 +1,6 @@
 require 'xmpp4r'
 
-class Broadcast::Medium::Jabber < Broadcast::Medium::Oauth
+class Broadcast::Medium::Jabber < Broadcast::Medium
 
   class Client
 

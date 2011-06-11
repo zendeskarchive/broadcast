@@ -1,6 +1,6 @@
 require 'broach'
 
-class Broadcast::Medium::Campfire < Broadcast::Medium::Oauth
+class Broadcast::Medium::Campfire < Broadcast::Medium
 
   def publish(message)
     Broach.settings = { 'account' => options.subdomain, 'token' => options.token, 'use_ssl' => true }
