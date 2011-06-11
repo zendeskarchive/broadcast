@@ -3,7 +3,7 @@ Broadcast [![Build Status](http://travis-ci.org/futuresimple/broadcast.png)](htt
 
 A broadcasting microframework making publishing of messages to different services easy and DRY.
 
-
+Current version is 0.2.1.
 
 Use Cases
 ------------
