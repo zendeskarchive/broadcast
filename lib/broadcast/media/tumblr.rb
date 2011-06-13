@@ -1,3 +1,5 @@
+require 'net/http'
+
 class Broadcast::Medium::Tumblr < Broadcast::Medium
 
   def publish(message)
@@ -9,7 +11,7 @@ class Broadcast::Medium::Tumblr < Broadcast::Medium
     post_params    = {"title" => message.subject, "body" => message.body, "type" => "regular"}.merge(publish_params)
 #     tumblelog_params = {'group' => "#{options.group}.tumblr.com"}
   
-    params = tumblelog_params.merge(user_params).merge(post_params)
+    params = user_params.merge(post_params)
 
     query = params.collect {|k, v| "#{k}=#{v}"}.join('&')
   
