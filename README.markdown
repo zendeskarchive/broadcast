@@ -226,6 +226,20 @@ It is based on the assumption that the user associated with the access token has
   end
 ```
 
+### Tumblr
+
+
+#### Example setup
+
+```ruby
+  Broadcast.setup do |config|
+    config.tumblr { |tumblr|
+      tumblr.email     = 'myaccount@tumblr.com'
+      tumblr.password  = 'mypass'
+    }
+  end
+```
+
 Copyright
 ---------
 
