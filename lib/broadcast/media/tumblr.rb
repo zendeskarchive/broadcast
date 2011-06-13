@@ -1,4 +1,4 @@
-class Broadcast::Medium::Tumblr < Broadcast::Medium::Oauth
+class Broadcast::Medium::Tumblr < Broadcast::Medium
 
   def publish(message)
     tumblr_url = URI.parse "http://www.tumblr.com"
