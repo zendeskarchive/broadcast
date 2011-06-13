@@ -3,7 +3,7 @@ Broadcast [![Build Status](http://travis-ci.org/futuresimple/broadcast.png)](htt
 
 A broadcasting microframework making publishing of messages to different services easy and DRY.
 
-
+Current version is 0.2.1.
 
 Use Cases
 ------------
@@ -67,6 +67,22 @@ When you're ready, just instantiate the Message class and call #publish:
 ```ruby
   Poke.new.publish
 ```
+
+Broadcast::Message::Simple
+------------
+
+If you need to dynamically create a message or just want a oneliner to publish a message, Broadcast::Message::Simple is your friend!
+
+```ruby
+  Broadcast::Message::Simple.new(:body => 'Poke!').publish(:jabber)
+```
+
+Broadcast::Message::Simple accepts the following keys in the arguments hash
+
+* body
+* subject
+
+Broadcast::Message::Simple#publish accepts the name of the medium and optional override settings for that medium
 
 Delayed::Job
 ------------
@@ -222,6 +238,43 @@ It is based on the assumption that the user associated with the access token has
     config.facebook { |facebook|
       facebook.token = 'facebook_access_token',
       facebook.page  = 'Name of the page to publish to'
+    }
+  end
+```
+
+### Irc
+
+Broadcast::Medium::Irc employs the shout-bot gem.
+
+#### Example setup
+
+```ruby
+  Broadcast.setup do |config|
+    config.irc { |irc|
+      irc.username = 'myusername',
+      irc.server = 'irc.freenode.net',
+      irc.port = '6667',
+      irc.channel = 'mychannel',
+    }
+  end
+```
+
+### SMS
+
+Broadcast::Medium::SMS is based on the SMSified gem.
+You must create an account on http://smsified.com before sending SMS text messages (developer accounts are free).
+You will be given a phone number to use as your very own FROM sms number. This number, along with your username and password,
+must be added to your config during setup.  The To address is the address of the mobile number that you would like to send the SMS message to.
+
+#### Example setup
+
+```ruby
+  Broadcast.setup do |config|
+    config.sms { |sms|
+      sms.username = 'myaccount'
+      sms.password = 'mypass'
+      sms.from     = '16025551212'
+      sms.to       = '14801234567'
     }
   end
 ```

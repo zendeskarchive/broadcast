@@ -1,6 +1,6 @@
 require 'koala'
 
-class Broadcast::Medium::Facebook < Broadcast::Medium::Oauth
+class Broadcast::Medium::Facebook < Broadcast::Medium
 
   def publish(message)
     # We do not rescue any Koala exceptions to make them crash the sendout

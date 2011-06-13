@@ -1,6 +1,6 @@
 require 'shout-bot'
 
-class Broadcast::Medium::Irc < Broadcast::Medium::Oauth
+class Broadcast::Medium::Irc < Broadcast::Medium
   def publish(message)
     uri = "irc://#{options.username}"
 
