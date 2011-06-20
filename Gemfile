@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gemspec
+gemspec :name => 'broadcast'
 
 group :development, :test do
   gem 'rake', '0.8.7'
