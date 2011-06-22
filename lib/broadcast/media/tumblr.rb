@@ -21,7 +21,7 @@ class Broadcast::Medium::Tumblr < Broadcast::Medium
       resp = http.post upload_path, query
     end
   
-    raise APIException.new(resp.body, resp.code.to_i) if resp.code.to_i != 201
+    raise StandardError, resp.body if resp.code.to_i != 201
   end
   
 end
