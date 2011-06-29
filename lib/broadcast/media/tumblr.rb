@@ -10,7 +10,7 @@ class Broadcast::Medium::Tumblr < Broadcast::Medium
     user_params    = {"email" => options.email, "password" => options.password}
     publish_params = {"state" => "published"}
     post_params    = {"title" => message.subject, "body" => message.body, "type" => "regular"}
-#     tumblelog_params = {'group' => "#{options.group}.tumblr.com"}
+#     tumblelog_params = {'group' => "#{options.group}.tumblr.com", "send-to-twitter" => options.send_to_twitter ? "auto" : "no"}
   
     params = user_params.merge(post_params).merge(publish_params).merge(user_params).merge(app_params)
 
