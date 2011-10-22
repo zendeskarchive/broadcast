@@ -31,9 +31,9 @@ describe Broadcast::Medium::Email do
       def mail.deliver; end
       Mail.should_receive(:new).and_return(mail)
       @medium.publish(@message)
-      mail.delivery_method.settings['user_name'].should == '<username>'
-      mail.delivery_method.settings['password'].should == '<password>'
-      mail.delivery_method.settings['address'].should == 'smtp.gmail.com'
+      mail.delivery_method.settings[:user_name].should == '<username>'
+      mail.delivery_method.settings[:password].should == '<password>'
+      mail.delivery_method.settings[:address].should == 'smtp.gmail.com'
     end
 
   end

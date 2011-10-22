@@ -13,7 +13,13 @@ class Broadcast::Medium::Email < Broadcast::Medium
          body    message.body
       end
       if options.delivery_method
-        mail.delivery_method options.delivery_method, options.delivery_options || {}
+        # ensure the delivery options has symbolized keys
+        # Addresses https://github.com/futuresimple/broadcast/issues/9
+        delivery_options = options.delivery_options.inject({}) do |memo, setting|
+          memo[setting[0].to_s.to_sym] = setting[1]
+          memo
+        end
+        mail.delivery_method options.delivery_method, delivery_options || {}
       end
       mail.deliver
     end
