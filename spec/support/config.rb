@@ -53,4 +53,14 @@ Broadcast.setup { |config|
     sms.to       = '22222222222'
   }
 
+  config.tumblr { |tumblr|
+
+    tumblr.hostname         = 'spec.tumblr.com'
+    tumblr.consumer_key     = 'consumerkey'
+    tumblr.consumer_secret  = 'consumersecret'
+    tumblr.access_token     = 'accesstoken'
+    tumblr.access_secret    = 'accesssecret'
+
+  }
+
 }

@@ -5,6 +5,8 @@ require 'bundler'
 
 Bundler::GemHelper.install_tasks
 
+import "lib/broadcast/tasks/broadcast.rake"
+
 begin
 
   require 'rspec'
