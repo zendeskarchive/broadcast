@@ -172,7 +172,7 @@ When you have it, run rake broadcast:authorize:yammer, which will help you get a
 
 ```ruby
   Broadcast.setup do |config|
-    config.twitter { |yammer|
+    config.yammer { |yammer|
       yammer.consumer_key    = 'consumerkey'
       yammer.consumer_secret = 'consumersecret'
       yammer.access_token    = 'accesstoken'
