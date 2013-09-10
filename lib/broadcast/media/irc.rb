@@ -7,6 +7,6 @@ class Broadcast::Medium::Irc < Broadcast::Medium
     uri += "@#{options.server}:#{options.port ? options.port : '6667'}"
     uri += "/##{options.channel.to_s.gsub("#","") }"
 
-    ShoutBot.shout(uri) { |room| room.say message }
+    ShoutBot.shout(uri) { |room| room.say message.body }
   end
 end
